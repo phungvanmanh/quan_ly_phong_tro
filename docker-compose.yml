@@ -7,7 +7,7 @@ services:
         container_name: frontend
         working_dir: /var/www/html/TESTNE_MASTER/FE
         ports:
-            - "3000:5173"  # Vite sẽ chạy trên cổng 3000
+            - "3000:3000"  # Vite sẽ chạy trên cổng 3000
         volumes:
             - ./FE:/var/www/html/TESTNE_MASTER/FE
             - /var/www/html/TESTNE_MASTER/FE/node_modules
