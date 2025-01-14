@@ -23,7 +23,7 @@ export const register = async (req: Request, res: Response) => {
     from: process.env.MAIL_USERNAME,
     to: req.body.email,
     subject: 'Xác thực tài khoản của bạn',
-    text: `Chào ${req.body.name}, vui lòng xác thực tài khoản của bạn bằng cách nhấp vào liên kết sau: ${process.env.CLIENT_ORIGIN}/verify-email?token=${result.email_verify_token}`
+    // text: `Chào ${req.body.name}, vui lòng xác thực tài khoản của bạn bằng cách nhấp vào liên kết sau: ${process.env.CLIENT_ORIGIN}/verify-email?token=${result.email_verify_token}`
   }
   //cấu hình gửi email
   await transporter.sendMail(mailOptions)
