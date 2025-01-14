@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     host: '0.0.0.0',  // Đảm bảo Vite có thể lắng nghe từ bên ngoài container
-    port: 5173,  // Cổng mặc định cho Vite
+    port: 3000,  // Cổng mặc định cho Vite
     watch: {
       usePolling: true, // Quan trọng trên Docker để phát hiện thay đổi
     },
