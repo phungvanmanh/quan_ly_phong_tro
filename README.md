@@ -4,6 +4,7 @@ npm i
 cd ../
 cd fe
 npm i
+
 #Bước 2: Buil image
 docker-compose down
 docker-compose build
