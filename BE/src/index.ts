@@ -3,6 +3,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import userRouter from './routers/user';
 import danhMucRouter from './routers/danhMuc'
+import thietBiRouter from './routers/thietBi'
 import cors from 'cors';
 import { verifyToken } from './middlewares/verifyToken';
 dotenv.config();
@@ -28,8 +29,7 @@ app.use('/auth', userRouter);
 app.use(verifyToken);
 
 app.use('/danh-muc', danhMucRouter);
-
-
+app.use('/thiet-bi', thietBiRouter);
 
 const connectDB = async () => {
 	try {
