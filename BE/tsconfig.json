@@ -1,0 +1,35 @@
+{
+    "compilerOptions": {
+      "target": "ES2020",
+      "module": "commonjs",
+      "strict": true,
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "forceConsistentCasingInFileNames": true,
+      "outDir": "./dist",// Đường dẫn output cho thư mục build
+      "baseUrl": "../src", // Đường dẫn base cho các import
+      "paths": {
+        "@/*": ["*"] // Đường dẫn tương đối cho các import (alias)
+      }
+    },
+    "include": ["src/**/*"],// Đường dẫn include cho các file cần build
+    "exclude": ["node_modules", "dist"]
+  }
+  
+//   Sự khác biệt khi sử dụng require và import:
+
+// CommonJS (require): được sử dụng trong node mặc định
+// Được hỗ trợ mặc định trong Node.js.
+// Hỗ trợ module loading đồng bộ, nghĩa là mã sẽ đợi mô-đun được nạp xong trước khi tiếp tục.
+// Phải sử dụng module.exports để xuất mô-đun.
+// Cú pháp: const express = require('express');
+
+// ES Modules (import/export):
+// Hỗ trợ loading bất đồng bộ và dễ dàng tương thích với các trình duyệt.
+// Phải sử dụng exports defauls để xuất mô-đun.
+// Cú pháp dễ hiểu hơn với import và export.
+// Cú pháp: import express from 'express';
+
+// Lưu ý: Để sử dụng cú pháp import trong Node.js,
+// bạn cần phải đảm bảo rằng Node.js hỗ trợ ES Modules hoặc bạn phải thay đổi cấu hình TypeScript (tsconfig.json) và chắc chắn rằng phiên bản Node.js 
+// bạn đang dùng hỗ trợ ES Modules (từ v12 trở lên).
