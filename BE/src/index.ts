@@ -6,6 +6,7 @@ import danhMucRouter from './routers/danhMuc'
 import thietBiRouter from './routers/thietBi'
 import cors from 'cors';
 import { verifyToken } from './middlewares/verifyToken';
+import YeuThichRouter from './routers/yeuThich';
 dotenv.config();
 
 const PORT = process.env.PORT || 3001;
@@ -24,11 +25,11 @@ app.use((req, res, next) => {
 
 //Những trang không cần token thì để ở đây
 app.use('/auth', userRouter);
-app.use('/auth', userRouter);
 
 app.use(verifyToken);
 
 app.use('/danh-muc', danhMucRouter);
+app.use('/yeu-thich', YeuThichRouter);
 app.use('/thiet-bi', thietBiRouter);
 
 const connectDB = async () => {
