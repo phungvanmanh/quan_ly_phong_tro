@@ -1,8 +1,13 @@
 #Bước 1: Chạy npm install của BE và FE
+
 cd be
+
 npm i
+
 cd ../
+
 cd fe
+
 npm i
 
 #Bước 2: Buil image
