@@ -3,6 +3,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import userRouter from './routers/user';
 import danhMucRouter from './routers/danhMuc'
+import thietBiRouter from './routers/thietBi'
 import cors from 'cors';
 import { verifyToken } from './middlewares/verifyToken';
 import YeuThichRouter from './routers/yeuThich';
@@ -29,8 +30,7 @@ app.use(verifyToken);
 
 app.use('/danh-muc', danhMucRouter);
 app.use('/yeu-thich', YeuThichRouter);
-
-
+app.use('/thiet-bi', thietBiRouter);
 
 const connectDB = async () => {
 	try {
