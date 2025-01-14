@@ -6,7 +6,7 @@ const ThietBiScheme = new Schema(
 	{
 		id_phong_tro : {
 			type : String,
-			require: true
+			require: false
 		},
 
 		ten_thiet_bi: {
@@ -14,9 +14,14 @@ const ThietBiScheme = new Schema(
 			require: true
 		},
 
-		so_luong_thiet_bị: {
+		so_luong_thiet_bi: {
 			type: Number,
 			require: false
+		},
+
+		trang_thai: {
+			type: Number,
+			require: true
 		}
 	},
 	{ timestamps: true }
