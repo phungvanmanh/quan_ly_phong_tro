@@ -23,10 +23,12 @@ app.use((req, res, next) => {
 
 //Những trang không cần token thì để ở đây
 app.use('/auth', userRouter);
+app.use('/auth', userRouter);
 
-//Những trang yêu cầu phải có token mới sử dụng thì viết ở đây
 app.use(verifyToken);
+
 app.use('/danh-muc', danhMucRouter);
+
 
 
 const connectDB = async () => {

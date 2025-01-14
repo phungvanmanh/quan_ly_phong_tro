@@ -1,6 +1,6 @@
 import UserModel from '../models/UserModel';
 import bcrypt from 'bcryptjs';
-import { getAccesstoken } from '../utils/getAccesstoken';
+import { getAccesstoken, verifyEmail } from '../utils/getAccesstoken';
 
 export class UserService {
     async registerUser(body: any): Promise<void> {
@@ -40,7 +40,21 @@ export class UserService {
         return await getAccesstoken({
             _id: user._id,
             email: user.email,
-            rule: user.rule ?? 1,
+            rule: user.id_quyen ?? "1",
+        });
+    }
+    async Veriftemail (email: string): Promise<string> {
+       
+        const user =await UserModel.findOne({email:email})
+        console.log(user)
+        if(user === null) {
+            throw new Error('User not fout')
+        }
+        
+        return await verifyEmail({
+            _id:user._id,
+            email:email,
+        
         });
     }
 }
