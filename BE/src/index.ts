@@ -7,6 +7,7 @@ import thietBiRouter from './routers/thietBi'
 import cors from 'cors';
 import { verifyToken } from './middlewares/verifyToken';
 import YeuThichRouter from './routers/yeuThich';
+import routeImage from './routers/Image';
 dotenv.config();
 
 const PORT = process.env.PORT || 3001;
@@ -31,6 +32,7 @@ app.use(verifyToken);
 app.use('/danh-muc', danhMucRouter);
 app.use('/yeu-thich', YeuThichRouter);
 app.use('/thiet-bi', thietBiRouter);
+app.use('/Image-phong', routeImage);
 
 const connectDB = async () => {
 	try {
