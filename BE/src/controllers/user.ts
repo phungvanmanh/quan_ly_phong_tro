@@ -19,7 +19,7 @@ export const register = async (req: Request, res: Response) => {
   try {
     const userService = new UserService();
   const result=  await userService.registerUser(body);
- const mailOptions = {
+  const mailOptions = {
     from: process.env.MAIL_USERNAME,
     to: req.body.email,
     subject: 'Xác thực tài khoản của bạn',
