@@ -10,7 +10,7 @@ npm install
 
 ### Frontend (FE):
 ```bash
-cd ../fe
+cd ../
 cd be
 npm install
 ```
