@@ -1,6 +1,7 @@
 /** @format */
 
 import mongoose, { Schema } from 'mongoose';
+import { UserVerifyStatus } from '../constants/enum';
 
 const UserScheme = new Schema(
 	{
@@ -26,6 +27,13 @@ const UserScheme = new Schema(
 		},
 		id_quyen: {
 			type: String,
+			default: 'khachhang',
+			required: false,
+		},
+		verify: {
+			type: String, // Kiểu dữ liệu là String
+			enum: Object.values(UserVerifyStatus), // Giới hạn giá trị thuộc enum UserVerifyStatus
+			default: UserVerifyStatus.Unverified, // Giá trị mặc định là "Unverified"
 			required: false,
 		},
 		que_quan: {
