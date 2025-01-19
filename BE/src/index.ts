@@ -5,7 +5,6 @@ import userRouter from './routers/user';
 import danhMucRouter from './routers/danhMuc'
 import thietBiRouter from './routers/thietBi'
 import cors from 'cors';
-import { verifyToken } from './middlewares/verifyToken';
 import YeuThichRouter from './routers/yeuThich';
 import routeImage from './routers/Image';
 dotenv.config();
@@ -24,11 +23,7 @@ app.use((req, res, next) => {
 	next();
 });
 
-//Những trang không cần token thì để ở đây
 app.use('/auth', userRouter);
-
-app.use(verifyToken);
-
 app.use('/danh-muc', danhMucRouter);
 app.use('/yeu-thich', YeuThichRouter);
 app.use('/thiet-bi', thietBiRouter);

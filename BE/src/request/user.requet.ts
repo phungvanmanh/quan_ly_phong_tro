@@ -77,16 +77,3 @@ export const UserLoginRequest = (
 
   next();
 };
-
-export const UserVerifyEmail = (
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
-  if (!req.body.email) {
-    return res.status(400).json({
-      message: "Vui Lòng Nhập Vào Email Để Đổi Mật khẩu ",
-    });
-  }
-  next();
-};
