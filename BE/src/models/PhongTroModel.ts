@@ -4,6 +4,10 @@ import mongoose, { Schema } from 'mongoose';
 
 const PhongTroScheme = new Schema(
     {
+        ma_phong: {  //trường này đại diện cho id của phòng 
+            type: String,
+            required: true,
+        },
         id_map: {
             type: String,
             required: false,
@@ -14,7 +18,7 @@ const PhongTroScheme = new Schema(
         },
         id_users: {
             type: String,
-            required: true,
+            required: false,
         },
         ten_phong_tro: {
             type: String,
