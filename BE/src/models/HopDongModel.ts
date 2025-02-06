@@ -6,7 +6,7 @@ const HopDongScheme = new Schema(
     {
         ten_hop_dong: {
             type: String,
-            required: true,
+            default:"Hợp đồng thuê phòng"
         },
         id_phong: {
             type: String,
@@ -30,6 +30,7 @@ const HopDongScheme = new Schema(
         },
         trang_thai: {
             type: Number,
+            enum: ["cho_ky", "da_ky", "het_han"],
             required: true,
         },
         file_hop_dong: {

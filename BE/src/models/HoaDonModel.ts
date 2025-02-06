@@ -20,14 +20,6 @@ const HoaDonScheme = new Schema(
             type: Number,
             required: true,
         },
-        tien_dien: {
-            type: Number,
-            required: true,
-        },
-        tien_nuoc: {
-            type: Number,
-            required: true,
-        },
         tong_tien: {
             type: Number,
             required: true,
